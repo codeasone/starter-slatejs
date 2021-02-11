@@ -1,0 +1,22 @@
+{:paths ["src/cljs" "resources" "target"]
+ :deps
+ {org.clojure/clojure {:mvn/version "1.10.1"}
+  org.clojure/clojurescript {:mvn/version "1.10.773"}
+  com.bhauman/figwheel-main {:mvn/version "0.2.7"}
+  com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}
+  medley/medley {:mvn/version "1.1.0"}
+  uix.core/uix.core {:deps/root "core"
+                     :exclusions [cljsjs/react]
+                     :git/url "https://github.com/roman01la/uix.git"
+                     :sha "eee1cc941ada2de46b253f89df86de4a6b248d67"}
+  uix.dom/uix.dom {:deps/root "dom"
+                   :exclusions [cljsjs/react-dom]
+                   :git/url "https://github.com/roman01la/uix.git"
+                   :sha "eee1cc941ada2de46b253f89df86de4a6b248d67"}
+  hashp/hashp {:git/url "https://github.com/codeasone/hashp.git"
+               :sha "9e21e6fe449e22ee9345e177625772504b791f02"}}
+
+ :aliases
+ {:fig {:main-opts ["-m" "figwheel.main" "-b" "dev"]}
+  :release {:main-opts ["-m" "figwheel.main" "-b" "min"]}
+  :print-config {:main-opts ["-m" "figwheel.main" "-pc" "-b" "dev"]}}}
