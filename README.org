@@ -1,0 +1,26 @@
+* starter-slatejs
+Barebones UIX + SlateJS 0.47 project. Basis for exploratory coding and issue reporting.
+
+* Development
+** Dependencies
+#+BEGIN_SRC sh
+yarn install
+#+END_SRC
+
+** Compile and Run
+*** Console
+#+BEGIN_SRC sh
+clj -M:fig
+#+END_SRC
+
+Or...
+
+*** Emacs
+=M-x cider-jack-in-cljs=
+
+* Release
+#+BEGIN_SRC sh
+clj -M:release
+#+END_SRC
+
+To evaluate release build visit: =http://localhost:9500/release.html=

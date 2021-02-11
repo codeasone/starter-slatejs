@@ -1,0 +1,4 @@
+^{:watch-dirs ["src/cljs"]
+  :auto-bundle :webpack}
+
+{:main starter-slatejs.core}
