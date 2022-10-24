@@ -11,6 +11,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "slate": "^0.84.0",
+    "slate-history": "^0.66.0",
     "slate-react": "^0.83.2"
   },
   "devDependencies": {

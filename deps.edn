@@ -1,6 +1,7 @@
 {:paths ["src/cljs" "resources"]
  :deps {org.clojure/clojure {:mvn/version "1.11.0-alpha1"}
         org.clojure/clojurescript {:mvn/version "1.11.4"}
+        cljs-bean/cljs-bean {:mvn/version "1.7.0"}
         uix.core/uix.core {:deps/root "core"
                            :exclusions [cljsjs/react]
                            :git/url "https://github.com/roman01la/uix.git"
