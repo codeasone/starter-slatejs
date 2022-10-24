@@ -1,17 +1,17 @@
 {
   "name": "starter-slatejs",
   "version": "0.0.1",
-  "description": "Barebones UIX + SlateJS 0.47",
+  "description": "Barebones UIX + SlateJS 0.84",
   "private": true,
   "author": "Mark Stuart",
   "main": "src/js/index.js",
   "dependencies": {
     "@babel/core": "^7.4.5",
     "immutable": "^4.0.0-rc.12",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "slate": "^0.47.0",
-    "slate-react": "^0.22.2"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "slate": "^0.84.0",
+    "slate-react": "^0.83.2"
   },
   "devDependencies": {
     "webpack": "^4.35.0",
