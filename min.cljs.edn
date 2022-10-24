@@ -1,4 +1,0 @@
-^{:auto-bundle :webpack}
-
-{:main starter-slatejs.core
- :optimizations :advanced}

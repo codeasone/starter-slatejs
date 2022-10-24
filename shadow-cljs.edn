@@ -1,0 +1,10 @@
+{:deps {}
+ :log {:level :debug}
+ :dev-http {8123 "resources/public"}
+ :builds {:app {:target :browser
+                :output-dir "resources/public/js"
+                :asset-path "/js"
+                :modules {:main {:entries [starter-slatejs.core]}}
+                :devtools {:after-load starter-slatejs.core/mount
+                           :watch-dir "resources/public"
+                           :watch-path "/"}}}}

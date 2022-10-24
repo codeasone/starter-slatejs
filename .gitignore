@@ -4,3 +4,6 @@
 /.clj-kondo/
 /node_modules/
 /yarn-error.log
+/.lsp/
+/.shadow-cljs/
+/resources/public/js/

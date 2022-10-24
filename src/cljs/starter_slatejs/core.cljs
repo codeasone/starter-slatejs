@@ -1,10 +1,8 @@
-(ns ^:figwheel-hooks starter-slatejs.core
-  (:require [hashp.core :include-macros true]
-            [medley.core :as m]
+(ns starter-slatejs.core
+  (:require [medley.core :as m]
             [slate :as slate :refer [Value]]
-            [slate-react :as rslate]
+            [slate-react :as slate-react]
             [uix.compiler.alpha :as uixc]
-            [uix.compiler.aot :as aot]
             [uix.core.alpha :as uix]
             [uix.dom.alpha :as uix.dom]))
 
@@ -43,40 +41,19 @@
 
 (def reactified-component-lookup (m/map-vals uixc/as-react uix-component-lookup))
 
-(defn render-block
-  [props _editor next]
-  (prn "Rendering block!")
-  (let [comments [{:id 1234567890
-                   :comment "This is a comment"}]
-        node-type (goog.object/getValueByKeys props #js ["node" "type"])
-        uix-component (get reactified-component-lookup node-type)]
-
-    (if uix-component
-      (let [_ (goog.object/set props "comments" (clj->js comments))]
-        (aot/>el uix-component props))
-      (next))))
-
 (defn app
   []
   (let [document-value (document->value minimal-document)
         value* (uix/state document-value)]
-    [:> rslate/Editor {:value @value*
-                       :onChange on-change
-                       :renderBlock render-block}]))
+    [:> slate-react/Editor {:value @value*
+                            :onChange on-change}]))
 
 (defn mount
   []
   (uix.dom/render [app] (.getElementById js/document "app")))
 
-;; Must be exported so it is available even in :advanced release builds
-(defn ^:export init
+(defn init
   []
   (enable-console-print!)
-  (js/console.log "Initialising!")
-  (mount))
-
- ;; This is what figwheel calls after each save
-(defn ^:after-load re-render
-  []
-  (prn "Reloading!")
+  (prn "Initialising!")
   (mount))
